@@ -1,0 +1,79 @@
+cd ..
+
+cd ..
+
+cd ..
+
+
+
+mvn archetype:generate -DgroupId=com.example -DartifactId=demo-project -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+
+
+
+cd demo-project
+
+
+
+(
+
+echo ^<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+echo   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"^>
+
+echo   ^<modelVersion^>4.0.0^</modelVersion^>
+
+echo   ^<groupId^>com.example^</groupId^>
+
+echo   ^<artifactId^>demo-project^</artifactId^>
+
+echo   ^<packaging^>jar^</packaging^>
+
+echo   ^<version^>1.0-SNAPSHOT^</version^>
+
+echo   ^<name^>demo-project^</name^>
+
+echo   ^<url^>http://maven.apache.org^</url^>
+
+echo   ^<dependencies^>
+
+echo     ^<dependency^>
+
+echo       ^<groupId^>junit^</groupId^>
+
+echo       ^<artifactId^>junit^</artifactId^>
+
+echo       ^<version^>3.8.1^</version^>
+
+echo       ^<scope^>test^</scope^>
+
+echo     ^</dependency^>
+
+echo     ^<dependency^>
+
+echo       ^<groupId^>com.google.code.gson^</groupId^>
+
+echo       ^<artifactId^>gson^</artifactId^>
+
+echo       ^<version^>2.10.1^</version^>
+
+echo     ^</dependency^>
+
+echo   ^</dependencies^>
+
+echo ^</project^>
+
+) > pom.xml
+
+
+
+mvn compile
+
+mvn test  
+
+mvn package
+
+
+
+java -cp target/demo-project-1.0-SNAPSHOT.jar com.example.App  
